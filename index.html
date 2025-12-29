@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>المصحف الشريف</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Book Container -->
+    <div class="book-container">
+        <div class="book-wrapper">
+            <!-- Single Page -->
+            <div class="page" id="current-page-container">
+                <div class="page-content">
+                    <div class="svg-container" id="svg-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Minimal Navigation Controls (Overlay) -->
+    <div class="controls-overlay">
+        <button class="nav-btn prev-btn" id="prev-btn" aria-label="Previous Page">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        
+        <div class="page-indicator">
+            <span id="current-page">1</span> / <span id="total-pages">604</span>
+        </div>
+
+        <button class="nav-btn next-btn" id="next-btn" aria-label="Next Page">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Page Input (Hidden by default, shows on click) -->
+    <div class="page-input-overlay" id="page-input-overlay">
+        <div class="page-input-container">
+            <label for="page-input">اذهب إلى صفحة:</label>
+            <input type="number" id="page-input" min="1" max="604" value="1">
+            <button id="go-btn">اذهب</button>
+            <button id="close-input-btn">✕</button>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
